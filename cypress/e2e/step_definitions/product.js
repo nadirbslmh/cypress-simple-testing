@@ -2,6 +2,10 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 Given("I am on the home page", () => {
   cy.visit("https://demo.nopcommerce.com/");
+
+  cy.get(
+    "body > div.master-wrapper-page > div.header > div.header-lower > div.header-logo > a > img"
+  ).should("be.visible");
 });
 
 When("I click Computers category", () => {
@@ -20,8 +24,13 @@ Then("I see list of notebook product", () => {
   cy.get("#main > div > div.center-2 > div > div.page-title > h1").should(
     "be.visible"
   );
+
   cy.get("#main > div > div.center-2 > div > div.page-title > h1").should(
     "contain.text",
     "Notebooks"
   );
+
+  cy.get(
+    "#main > div > div.center-2 > div > div.page-body > div.product-selectors"
+  ).should("be.visible");
 });
