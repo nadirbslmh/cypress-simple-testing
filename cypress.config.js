@@ -10,6 +10,7 @@ const {
 } = require("@badeball/cypress-cucumber-preprocessor/esbuild");
 
 module.exports = defineConfig({
+  projectId: "4vq58k",
   viewportHeight: 1080,
   viewportWidth: 1920,
   e2e: {
